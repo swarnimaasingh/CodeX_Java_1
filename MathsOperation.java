@@ -1,21 +1,42 @@
-public class MathOperations {
-    static int sum(int i, int j) {
-        int a = i;
-        int b = j;
-        return(a+b);
-    }
+import java.util.*;
 
-    static double sum(double i, double j) {
-        return(i+j);
-    }
+public class Math{
 
-    static double sum(int i, double j) {
-        return (i + j);
-    }
+    public static void main(String args[]){
 
-    public static void main(String[] args) {
-        System.out.println(sum(5, 6));
-        System.out.println(sum(2.5, 3.1));
-        System.out.println(sum(1,11.9));
+        MathOperations maths = new MathOperations();
+
+        int s1 = maths.sum(4,5);
+        System.out.println("Sum of two integers: " + s1 + "\n");
+
+        double s2 = maths.sum(4.5,5.4);
+        System.out.println("Sum of two doubles: " + s2 + "\n");
+
+        double s3 = maths.sum(4,5.5);
+        System.out.println("Sum of an integer and a double: " + s3 + "\n");
+
+        double s4 = maths.sum(4.5,5);
+        System.out.println("Sum of a double and an integer: " + s4 + "\n");
+
     }
 }
+
+    class MathOperations{
+
+        public int sum(int n1, int n2){
+            return n1+n2;
+        }
+
+        public double sum(double n1, double n2){
+            return n1+n2;
+        }
+
+        public double sum(int n1, double n2){
+            return n1+n2;
+        }
+
+        public double sum(double n1, int n2){
+            return n1+n2;
+        }
+
+    }
