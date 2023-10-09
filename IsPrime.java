@@ -1,29 +1,37 @@
-public class Prime 
-{
-    public static void main(String[] args) {
-        int count = 0;
-        int number = 2; // Start checking for prime numbers from 2
-        
-        System.out.println("First 10 prime numbers:");
+import java.util.*;
 
-        while (count < 10) {
-            if (isPrime(number)) {
-                System.out.println(number);
-                count++;
-            }
-            number++;
-        }
-    }
-    public static boolean isPrime(int num) {
-        if (num <= 1) {
+public class Prime{
+
+    public static boolean isPrime(int n){
+
+        if(n ==1 || n == 0){
             return false;
         }
-        for (int i = 2; i * i <= num; i ++) {
-            if (num % i == 0) 
-            {
+        for(int i = 2 ; i<= (n/2); i++){
+
+            if(n%i==0){
                 return false;
             }
         }
+
         return true;
+    }
+
+    public static void main(String args[]){
+
+        int count=0;
+        int i=0;
+
+        while(count<10){
+            boolean p = isPrime(i);
+            if(p == true){
+                System.out.print(i+ " ");
+                count++;
+            }
+            i++;
+
+
+        }
+
     }
 }
